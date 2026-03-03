@@ -28,7 +28,7 @@
     },
     "@indiekit/store-github": {
       "user": "saundersresearch",
-      "repo": "saundersresearch.github.io",
+      "repo": "site_data",
       "branch": "main"
     },
     "@indiekit/syndicator-bluesky": {
