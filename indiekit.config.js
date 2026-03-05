@@ -13,7 +13,7 @@ const config = {
         //}),
         name: "Adam Saunders IndieKit",
         themeColor: "#1B92B0",
-        timeZone: "America/Chicago",
+        timeZone: process.env.TZ,
     },
     plugins: [
         "@indiekit/preset-jekyll",
@@ -24,6 +24,9 @@ const config = {
         postTemplate: getPostTemplate,
         // See README.md
         channels: {
+            default: {
+                name: "Default",
+            },
             mastodon: {
                 name: "Mastodon via Bridgy",
             },
