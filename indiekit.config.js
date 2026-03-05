@@ -18,20 +18,22 @@ const config = {
     plugins: [
         "@indiekit/preset-jekyll",
         "@indiekit/store-github",
-        "@indiekit/syndicator-bluesky",
-        "@indiekit/syndicator-mastodon",
     ],
     publication: {
         me: process.env.PUBLICATION_URL,
         postTemplate: getPostTemplate,
-        // channels: {
-        //     posts: {
-        //         name: "Posts",
-        //     },
-        //     pages: {
-        //         name: "Pages",
-        //     },
-        // },
+        // See README.md
+        channels: {
+            mastodon: {
+                name: "Mastodon via Bridgy",
+            },
+            bluesky: {
+                name: "Bluesky via Bridgy",
+            },
+            bridgy_fed: {
+                name: "Bridgy Fed",
+            }
+        },
         enrichPostData: true,
         postTypes: {
             article: {
@@ -111,6 +113,9 @@ const config = {
         repo: process.env.GITHUB_REPO,
         branch: process.env.GITHUB_BRANCH,
         token: process.env.GITHUB_TOKEN,
+    },
+    "syndicator-jekyll-webmention-io": {
+        user: "testuser",
     },
 };
 
