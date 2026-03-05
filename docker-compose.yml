@@ -6,12 +6,18 @@ services:
     ports:
       - ${HTTP_PORT:-3000}:3000
     environment:
+      - MONGO_INITDB_ROOT_USERNAME
+      - MONGO_INITDB_ROOT_PASSWORD
       - MONGO_URL=mongodb://$MONGO_INITDB_ROOT_USERNAME:$MONGO_INITDB_ROOT_PASSWORD@mongo
       - PASSWORD_SECRET
       - SECRET
+      - PUBLICATION_URL
       - GITHUB_TOKEN
+      - GITHUB_USER
+      - GITHUB_REPO
+      - GITHUB_BRANCH
   mongo:
-    image: mongo:4
+    image: mongo:4.4.17
     restart: always
     volumes:
       - mongo-data:/data/db
