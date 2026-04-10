@@ -35,6 +35,9 @@ const config = {
             },
             bridgy_fed: {
                 name: "Bridgy Fed",
+            },
+            indienews: {
+                name: "IndieNews"
             }
         },
         enrichPostData: true,
