@@ -22,6 +22,7 @@
     "@indiekit/store-github": "^1.0.0-beta.25",
     "@indiekit/syndicator-bluesky": "^1.0.0-beta.25",
     "@indiekit/syndicator-mastodon": "^1.0.0-beta.25",
+    "@rmdes/indiekit-endpoint-microsub": "^1.0.61",
     "dotenv": "^17.3.1"
   }
 }
