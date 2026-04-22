@@ -18,7 +18,6 @@ const config = {
     plugins: [
         "@indiekit/preset-jekyll",
         "@indiekit/store-github",
-        "@rmdes/indiekit-endpoint-microsub",
     ],
     publication: {
         me: process.env.PUBLICATION_URL,
@@ -121,9 +120,6 @@ const config = {
         branch: process.env.GITHUB_BRANCH,
         token: process.env.GITHUB_TOKEN,
     },
-    "@rmdes/indiekit-endpoint-microsub": {
-        mountPath: "/microsub",
-    }
 };
 
 export default config;
