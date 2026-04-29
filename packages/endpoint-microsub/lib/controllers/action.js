@@ -74,7 +74,7 @@ export const actionController = async (req, res, next) => {
                 content = {
                     status: 200,
                     json: {
-                        items: feeds.map(url => ({
+                        results: feeds.map(url => ({
                             type: "feed",
                             url,
                         })),
