@@ -5,7 +5,7 @@ import { getCursor } from "@indiekit/util"
 
 export const entryData = {
     // Add entries from feed
-    async update(application, feedUid) {
+    async update(application, feedUid, cache = true) {
         const feedCollection = application?.collections?.get("microsub-feeds");
         const entryCollection = application?.collections?.get("microsub-entries");
         const query = { _id: new ObjectId(feedUid) };
@@ -17,7 +17,7 @@ export const entryData = {
         }
 
         // Check if etag is present and if so, add If-None-Match header to request
-        if (feedRecord.etag) {
+        if (feedRecord.etag && cache) {
             try {
                 const response = await fetch(feedRecord.url, {
                     headers: {

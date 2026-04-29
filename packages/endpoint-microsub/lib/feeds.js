@@ -41,7 +41,7 @@ export const feedData = {
 
         // Now, update entries for this feed
         const feedUid = doc._id.toString();
-        await entryData.update(application, feedUid);
+        await entryData.update(application, feedUid, false);
 
         return {
             status: 200,
