@@ -17,6 +17,9 @@ RUN npm i --omit=dev --package-lock=false
 # Copy application code
 COPY . .
 
+# Install local packages
+RUN npm i ./packages/* --omit=dev --package-lock=false
+
 # Expose port
 EXPOSE 3000
 
