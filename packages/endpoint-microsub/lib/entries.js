@@ -126,6 +126,11 @@ export const entryData = {
         }
         const cursor = await getCursor(entryCollection, after, before, limit);
 
+        // Filter by channel and sort by published date descending
+        const feeds = await feedsCollection.find({ channel: channel }).toArray();
+        const feedIds = feeds.map(feed => feed._id);
+        cursor.items = await entryCollection.find({ feed: { $in: feedIds } }).sort({ published: -1 }).toArray();
+
         // Remove feed from items
         cursor.items = cursor.items.map(item => {
             const { feed, ...rest } = item;
